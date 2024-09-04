@@ -1,0 +1,117 @@
+.bg-client {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.form-div-bg {
+    width: 800px;
+    height: 500px;
+    position: fixed;
+    background-color: #C6C6C6;
+    border-radius: 10px;
+    top: 105px;
+}
+
+.form-div {
+    width: 800px;
+    height: 500px;
+    position: fixed;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+    transform: translateX(10px) translateY(-10px);
+    top: 105px;
+}
+
+.title {
+    margin: 40px;
+}
+
+.client-data {
+    width: 500px;
+    justify-content: left;
+    margin: 40px;   
+}
+
+.label-client {
+    background-color:#fcfcfc;
+    text-align: left;
+    position: fixed;
+    margin: 0;
+    font-weight: bolder;
+}    
+
+.data {
+    margin-left: 100px;
+    text-align: left;
+    position: static;
+    margin: 0 100px;
+}
+
+.device-table {
+    width: 720px;
+    max-height: 350px;
+    margin: 40px;
+    border: 1px solid black;
+}
+
+.table-head {
+    background-color: #2b72ba;
+    color: white;
+    font-weight: lighter;
+    height: 20px;
+}
+
+td, th {
+    border: 1px solid black;
+    height: 20px;
+    text-align: center;
+    width: 10px;
+}
+
+.image-table {
+    width: 20px;
+    height: 20px;
+}
+
+.register-button {
+    background-color:#3F337B;
+    color: white;
+    border-color: rgb(0, 136, 255);
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    position:fixed;
+    right: 40px;
+    top: 80px;
+}
+
+.register-button:hover {
+    background-color: #5a48b1;
+    color: white;
+    border-color: rgb(0, 136, 255);
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    position:fixed;
+    right: 40px;
+    top: 80px;
+    cursor: pointer;
+}
+
+.register-button:active {
+    background-color: #7560dc;
+    color: white;
+    border-color: rgb(0, 136, 255);
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    position:fixed;
+    right: 40px;
+    top: 80px;
+    cursor: progress;
+}
+
+
+
+

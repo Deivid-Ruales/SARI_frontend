@@ -1,0 +1,138 @@
+html {
+    font-family:'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-image: url("../Resources/bg-color.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color:#ededed;
+    height: fit-content;
+}
+.form-div-bg {
+    width: 400px;
+    height: 540px;
+    position: fixed;
+    top: 12%;
+    left: 13%;
+    background-color: #C6C6C6;
+    border-radius: 4px;
+}
+
+.form-div {
+    width: 400px;
+    height: 540px;
+    position: fixed;
+    top: 10%;
+    left: 15%;
+    background-color: #fcfcfc;
+    border-radius: 4px;
+}
+
+.title {
+    width: 200px;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.text-title {
+    color: #3F337B;
+    text-align: center;
+}
+
+.form {
+    margin: auto;
+    width: 300px;
+    justify-content: center;
+}
+
+.input-form {
+    background-color:#fcfcfc;
+    width: 295px;
+    padding: 5px;
+    margin: 20px 0 5px 0;
+    border: none;
+    border-bottom: 2px solid #3F337B;
+    text-align: center;
+    outline: none;
+}
+
+.label-input {
+    margin: auto;
+    text-align: center;
+    color: #3F337B;
+
+}
+
+.login-button {
+    color: white;
+    background-color:#3F337B;
+    border-color: rgb(0, 136, 255);
+    width: 70px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 50px auto 20px auto;
+    text-decoration: none;
+    padding: 5px 10px 5px 22px;
+    display: flex;
+}
+
+.login-button:hover {
+    background-color: #5a48b1;
+    color: white;
+    border-color: rgb(0, 136, 255);
+    width: 70px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 50px auto 20px auto;
+    text-decoration: none;
+    padding: 5px 10px 5px 22px;
+    display: flex;
+    cursor: pointer;
+}
+
+.login-button:active {
+    background-color: #7560dc;
+    color: white;
+    border-color: rgb(0, 136, 255);
+    width: 70px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 50px auto 20px auto;
+    text-decoration: none;
+    padding: 5px 10px 5px 22px;
+    display: flex;
+    cursor: progress;
+}
+
+.forgot-pass-link {
+    color: black;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.logo-div {
+    display: flex;
+}
+
+.logo {
+    max-width: 500px;
+    top: 40%;
+    right: 15%;
+    position: fixed;
+}
+
+/*change size to logo in small screen*/
+@media (max-width:1280px){
+    .logo {
+        top:auto;
+        right: auto;
+        position: relative;
+        margin: 50px auto;
+        width: 100%;
+        z-index: -1; /*put the image to back*/   
+    }
+
+    
+}

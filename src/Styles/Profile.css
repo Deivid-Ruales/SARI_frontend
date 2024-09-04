@@ -1,0 +1,111 @@
+.bg-new-client {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.form-div-bg {
+    width: 450px;
+    height: 500px;
+    position: fixed;
+    background-color: #C6C6C6;
+    border-radius: 4px;
+    top: 105px;
+}
+
+.form-div {
+    width: 450px;
+    height: 500px;
+    position: fixed;
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    transform: translateX(10px) translateY(-10px);
+    top: 105px;
+}
+
+.title {
+    width: 350px;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.text-title {
+    color: #3F337B;
+    text-align: center;
+}
+
+.client-data {
+    width: 500px;
+    justify-content: left;
+    margin: 40px 0;   
+}
+
+.label-client {
+    background-color:#fcfcfc;
+    text-align: left;
+    position: fixed;
+    margin: 0;
+    font-weight: bolder;
+}    
+
+.data {
+    margin-left: 100px;
+    text-align: left;
+    position: static;
+    margin: 20px 110px;
+}
+
+.form {
+    margin: auto;
+    width: 300px;
+    justify-content: center;
+}
+
+.register-button {
+    color: white;
+    background-color:#3F337B;
+    border-color: rgb(0, 136, 255);
+    text-decoration: none;
+    padding:5px 10px;
+    width: 110px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    margin: auto;
+}
+
+.register-button:hover {
+    background-color: #5a48b1;
+    color: white;
+    border-color: rgb(0, 136, 255);
+    text-decoration: none;
+    padding:5px 10px;
+    width: 110px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    margin: auto;
+    cursor: pointer;
+}
+
+.register-button:active {
+    background-color: #7560dc;
+    color: white;
+    border-color: rgb(0, 136, 255);
+    text-decoration: none;
+    padding:5px 10px;
+    width: 110px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    margin: auto;
+    cursor: progress;
+}
+
+
+
+
+
+
+
+
