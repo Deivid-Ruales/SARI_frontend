@@ -1,4 +1,5 @@
 import React from 'react'; 
+import "../../Styles/Index.css"
 
 const Login = () => { 
   return (
@@ -23,11 +24,6 @@ const Login = () => {
           {/* Enlace para recuperar la contraseña si el usuario la ha olvidado */}
           <a className="forgot-pass-link" href="#" target="_blank">Olvidé mi contraseña</a>
         </form>
-      </div>
-      
-      {/* Sección para mostrar el logotipo en la página */}
-      <div className="logo-div">
-        <img className="logo" src="resources/logo-cgimport.png" alt="Logo" />
       </div>
     </div>
   );

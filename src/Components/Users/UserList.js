@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/ClientList.css';
 
-const Users = () => {
+const UserList = () => {
   return (
     <div>
        {/* Sección principal donde se muestra la tabla de usuarios */}
@@ -56,4 +56,4 @@ const Users = () => {
   );
 };
 
-export default Users; // Exporta el componente para usarlo en otras partes de la aplicación.
+export default UserList; // Exporta el componente para usarlo en otras partes de la aplicación.

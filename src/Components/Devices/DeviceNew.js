@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/DeviceNew.css';
 
-const NewDevice = () => {
+const DeviceNew = () => {
   return (
     <main className="bg-main bg-new-client">
       {/* Contenedor principal del formulario para actualizar un dispositivo */}
@@ -35,4 +35,4 @@ const NewDevice = () => {
   );
 };
 
-export default NewDevice;
+export default DeviceNew;

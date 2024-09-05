@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/ClientNew.css';
 
-const UpdateClient = () => {
+const ClientUpdate = () => {
   return (
     <main className="bg-main bg-new-client">
       {/* Contenedor principal del formulario de actualización */}
@@ -31,4 +31,4 @@ const UpdateClient = () => {
   );
 };
 
-export default UpdateClient;
+export default ClientUpdate;

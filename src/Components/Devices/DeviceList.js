@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/ClientList.css';
 
-const ListDevices = () => {
+const DeviceList = () => {
   return (
     <main className="bg-main bg-client">
       {/* Contenedor principal de la tabla de dispositivos */}
@@ -50,4 +50,4 @@ const ListDevices = () => {
   );
 };
 
-export default ListDevices;
+export default DeviceList;

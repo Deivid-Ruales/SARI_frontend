@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/ClientInfo.css';
 
-const ClientInfo = () => {
+const ProfileHistory = () => {
   return (
     <main className="bg-main bg-client">
       <div className="form-div-bg">
@@ -51,4 +51,4 @@ const ClientInfo = () => {
   );
 };
 
-export default ClientInfo;
+export default ProfileHistory;

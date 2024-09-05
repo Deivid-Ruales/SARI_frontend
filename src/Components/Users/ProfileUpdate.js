@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/DeviceNew.css';
 
-const UpdateProfile = () => {
+const ProfileUpdate = () => {
   return (
     <main className="bg-main bg-new-client">
       <div className="form-div-bg">
@@ -30,4 +30,4 @@ const UpdateProfile = () => {
   );
 };
 
-export default UpdateProfile;
+export default ProfileUpdate;

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/DeviceNew.css';
 
-const EditService = () => {
+const ServiceUpdate = () => {
   return (
     <main className="bg-main bg-new-client">
       <div className="form-div-bg">
@@ -32,4 +32,4 @@ const EditService = () => {
   );
 };
 
-export default EditService;
+export default ServiceUpdate;

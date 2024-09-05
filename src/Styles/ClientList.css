@@ -1,13 +1,13 @@
-.bg-client {
+/* .bg-client {
     display: flex;
     justify-content: center;
     padding: 10px;
-}
+} 
 
 .form-div-bg {
     width: 800px;
     height: 500px;
-    position: fixed;
+    position: static;
     background-color: #C6C6C6;
     border-radius: 10px;
     top: 105px;
@@ -16,7 +16,7 @@
 .form-div {
     width: 800px;
     height: 500px;
-    position: fixed;
+    position: static;
     background-color: #fcfcfc;
     border-radius: 10px;
     transform: translateX(10px) translateY(-10px);
@@ -114,4 +114,4 @@ td, th {
 
 
 
-
+ */

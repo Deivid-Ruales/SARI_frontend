@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../Styles/ClientNew.css';
 
-const NewClient = () => {
+const ClientNew = () => {
   return (
     <main className="bg-main bg-new-client">
       {/* Contenedor principal del formulario para crear un nuevo cliente */}
@@ -31,4 +31,4 @@ const NewClient = () => {
   );
 };
 
-export default NewClient;
+export default ClientNew;
