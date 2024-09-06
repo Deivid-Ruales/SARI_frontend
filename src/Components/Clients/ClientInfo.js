@@ -1,58 +1,72 @@
 import React from 'react';
-import '../../Styles/ClientInfo.css';
+import trash from '../../Resources/trash.png';
+import config from '../../Resources/config.png';
+import watch from '../../Resources/watch.png';
 
 const ClientInfo = () => {
   return (
-    <main className="bg-main bg-client">
-      {/* Contenedor principal de la información del cliente */}
-      <div className="form-div-bg">
-        <div className="form-div">
-          
-          {/* Información del cliente */}
-          <div className="client-data">
-            <p className="label-client">NOMBRE:</p>
-            <p className="data">Deivid</p>
-            <p className="label-client">CÉDULA:</p>
-            <p className="data">1085000111</p>
-            <p className="label-client">TELÉFONO:</p>
-            <p className="data">3153890000</p>
-            <p className="label-client">DIRECCIÓN:</p>
-            <p className="data">Carrera 25 No. 20 - 22 Centro</p>
+    <main className="d-flex justify-content-center">
+      <div className="card" style={{ width: '800px' }}>
+        <div className="card-body">
+          <h5 className="card-title">INFORMACIÓN DEL CLIENTE</h5>
+
+          <form className="forms">
+            <div class="mb-3 row">
+              <label for="nombre" class="col-sm-2 col-form-label fw-bold">NOMBRE:</label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="nombre" value="Deivid Ruales"></input>
+              </div>
+              <label for="cedula" class="col-sm-2 col-form-label fw-bold">CÉDULA:</label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="cedula" value="1000123532"></input>
+              </div>
+              <label for="telefono" class="col-sm-2 col-form-label fw-bold">TELÉFONO:</label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="telefono" value="3153895621"></input>
+              </div>
+              <label for="direccion" class="col-sm-2 col-form-label fw-bold">DIRECCIÓN:</label>
+              <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" id="direccion" value="Carrera 25 No. 15 - 32 Centro"></input>
+              </div>
+            </div>
+          </form>
+
+          <div class="d-flex justify-content-end">
+            <a href="DeviceNew">
+              <button type="button" class="btn btn-primary mb-3">Registrar Nuevo Dispositivo</button>
+            </a>
           </div>
 
-          {/* Botón para crear un nuevo dispositivo */}
-          <a href="newDevice.html" className="register-button">Crear nuevo dispositivo</a>
-
-          {/* Tabla que muestra la lista de dispositivos */}
-          <table className="device-table">
-            <thead>
-              <tr className="table-head">
-                <th>No.</th>
-                <th>Tipo</th>
-                <th>Marca</th>
-                <th>Referencia</th>
-                <th>Serial</th>
-                <th>Detalles</th>
-                <th className="column-image">Historial</th>
-                <th className="column-image">Editar</th>
-                <th className="column-image">Eliminar</th>
-              </tr>
-            </thead>
-            <tbody>
-              {/* Fila que muestra un dispositivo específico */}
-              <tr>
-                <td>1</td>
-                <td>Impresora</td>
-                <td>Epson</td>
-                <td>L210</td>
-                <td>VNHK0255TD3</td>
-                <td>Multifuncional</td>
-                <td><a href="historyDevice.html"><img className="image-table" src="/resources/watch.png" alt="Ver historial" /></a></td>
-                <td><a href="deviceEdit.html"><img className="image-table" src="/resources/config.png" alt="Editar" /></a></td>
-                <td><a href="#"><img className="image-table" src="/resources/trash.png" alt="Eliminar" /></a></td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="table-responsive">
+            <table className="table table-borderless">
+              <thead className="table-head table-primary">
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Referencia</th>
+                  <th scope="col">Serial</th>
+                  <th scope="col">Detalles</th>
+                  <th scope="col" className="column-image">Historial</th>
+                  <th scope="col" className="column-image">Editar</th>
+                  <th scope="col" className="column-image">Eliminar</th>
+                </tr>
+              </thead>
+              <tbody class="table-group-divider table-striped">
+                <tr>
+                  <td>1</td>
+                  <td>Impresora</td>
+                  <td>Epson</td>
+                  <td>L210</td>
+                  <td>VNHK0255TD3</td>
+                  <td>Multifuncional</td>
+                  <td><a href="DeviceHistory"><img className="image-table" src={watch} alt="Historial" /></a></td>
+                  <td><a href="DeviceUpdate"><img className="image-table" src={config} alt="Editar" /></a></td>
+                  <td><a href="#"><img className="image-table" src={trash} alt="Eliminar" /></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </main>

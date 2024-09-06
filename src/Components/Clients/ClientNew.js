@@ -1,29 +1,30 @@
 import React from 'react';
-import '../../Styles/ClientNew.css';
 
 const ClientNew = () => {
   return (
-    <main className="bg-main bg-new-client">
-      {/* Contenedor principal del formulario para crear un nuevo cliente */}
-      <div className="form-div-bg">
-        <div className="form-div">
-          
-          {/* Título de la sección */}
-          <div className="title">
-            <h1 className="text-title">CREAR NUEVO CLIENTE</h1>
-          </div>
-
-          {/* Formulario para ingresar la información del nuevo cliente */}
-          <form className="form">
-            <input className="input-form" type="text" placeholder="Nombre" />
-            <p className="label-input">Nombre</p>
-            <input className="input-form" type="text" placeholder="Cédula" />
-            <p className="label-input">Cédula</p>
-            <input className="input-form" type="text" placeholder="Teléfono" />
-            <p className="label-input">Teléfono</p>
-            <input className="input-form" type="text" placeholder="Dirección" />
-            <p className="label-input">Dirección</p>
-            <button className="register-button">Registrar</button>
+    <main className="d-flex justify-content-center">
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">REGISTRAR NUEVO CLIENTE</h5>
+          <form className="forms">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="name"></input>
+            </div>
+            <div class="mb-3">
+              <label for="cedula" class="form-label">Cédula</label>
+              <input type="text" class="form-control" id="cedual" ></input>
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="text" class="form-control" id="telefono"></input>
+            </div>
+            <div class="mb-3">
+              <label for="direccion" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="direccion"></input>
+            </div>
+            <button type="submit" class="btn btn-primary button-form">Registrar</button>
+            <button type="reset" class="btn btn-secondary button-form">Cancelar</button>
           </form>
         </div>
       </div>

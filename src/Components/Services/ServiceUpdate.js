@@ -1,30 +1,42 @@
 import React from 'react';
-import '../../Styles/DeviceNew.css';
 
 const ServiceUpdate = () => {
   return (
-    <main className="bg-main bg-new-client">
-      <div className="form-div-bg">
-        <div className="form-div">
-          <div className="title">
-            <h1 className="text-title">EDITAR SERVICIO</h1>
-          </div>
-          <form className="form">
-            <input className="input-form" type="text" placeholder="15/Feb/24" />
-            <p className="label-input">Fecha</p>
-            <input className="input-form" type="text" placeholder="Mantenimiento" />
-            <p className="label-input">Servicio</p>
-            <input className="input-form" type="text" placeholder="Limpieza de inyectores, purga de sistema" />
-            <p className="label-input">Observaciones</p>
-            <input className="input-form" type="text" placeholder="22,15" />
-            <p className="label-input">% Almohadillas</p>
-            <input className="input-form" type="text" placeholder="2.533" />
-            <p className="label-input">Cant. ADF</p>
-            <input className="input-form" type="text" placeholder="33.265" />
-            <p className="label-input">Cant. Impresiones</p>
-            <input className="input-form" type="text" placeholder="Deivid Ruales" />
-            <p className="label-input">Técnico</p>
-            <button className="register-button">Actualizar</button>
+    <main className="d-flex justify-content-center">
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">ACTUALIZAR SERVICIO</h5>
+          <form className="forms">
+            <div class="mb-3">
+              <label for="fecha" class="form-label">Fecha</label>
+              <input type="date" class="form-control" id="fecha" placeholder="15/Feb/24"></input>
+            </div>
+            <div class="mb-3">
+              <label for="servicio" class="form-label">Servicio</label>
+              <input type="text" class="form-control" id="servicio" placeholder="Mantenimiento"></input>
+            </div>
+            <div class="mb-3">
+              <label for="observaciones" class="form-label">Observaciones</label>
+              <input type="text" class="form-control" id="observaciones" placeholder="Limpieza de inyectores, purga de sistema"></input>
+            </div>
+            <div class="mb-3">
+              <label for="almohadillas" class="form-label">Almohadillas</label>
+              <input type="text" class="form-control" id="almohadillas" placeholder="22,15"></input>
+            </div>
+            <div class="mb-3">
+              <label for="cantAdf" class="form-label">Cant.ADF</label>
+              <input type="text" class="form-control" id="cantAdf" placeholder="2.533"></input>
+            </div>
+            <div class="mb-3">
+              <label for="cantImpresiones" class="form-label">Cant.Impresiones</label>
+              <input type="text" class="form-control" id="cantImpresiones" placeholder="33.265"></input>
+            </div>
+            <div class="mb-3">
+              <label for="tecnico" class="form-label">Técnico</label>
+              <input type="text" class="form-control" id="tecnico" placeholder="Deivid Ruales"></input>
+            </div>
+            <button type="submit" class="btn btn-primary button-form">Registrar</button>
+            <button type="reset" class="btn btn-secondary button-form">Cancelar</button>
           </form>
         </div>
       </div>

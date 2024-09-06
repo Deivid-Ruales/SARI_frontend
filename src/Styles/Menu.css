@@ -1,14 +1,17 @@
 .bg-main-page {
-    padding: 10px 26% 100px 26%;
+    padding: 0 20%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: stretch;
+    justify-items: stretch;
+    align-content: stretch;
 }
 
 .item-menu {
     background-color: white;
-    width: 80%; 
-    height: 190px;
     padding: 20px;
     border-radius: 4px;
     border-left: 5px solid #C6C6C6;
@@ -22,7 +25,7 @@
 .image-menu {
     width: 140px;
     height: 140px;
-    margin: 0;
+    margin: 10px 20px;
 }
 
 a {
@@ -36,7 +39,7 @@ a {
     font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 878px) {
     .bg-main-page {
         grid-template-columns: 1fr;
     }

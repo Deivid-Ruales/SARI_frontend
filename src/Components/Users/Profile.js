@@ -1,30 +1,41 @@
 import React from 'react';
-import '../../Styles/Profile.css';
 
 const Profile = () => {
   return (
-    <main className="bg-main bg-new-client">
-      <div className="form-div-bg">
-        <div className="form-div">
-          <div className="title">
-            <h1 className="text-title">DATOS DE USUARIO</h1>
-          </div>
-          <form className="form">
-            <div className="client-data">
-              <p className="label-client">NOMBRE:</p>
-              <p className="data">Deivid Ruales</p>
-              <p className="label-client">CONTRASEÑA:</p>
-              <p className="data">********</p>
-              <p className="label-client">CÉDULA:</p>
-              <p className="data">1085000111</p>
-              <p className="label-client">TELÉFONO:</p>
-              <p className="data">3153890000</p>
-              <p className="label-client">DIRECCIÓN:</p>
-              <p className="data">Carrera 25 No. 20 - 22 Centro</p>
-              <p className="label-client">CARGO:</p>
-              <p className="data">Técnico</p>
+    <main className="d-flex justify-content-center">
+      <div className="card" style={{ width: '400px' }}>
+        <div className="card-body">
+          <h5 className="card-title">DATOS DE USUARIO</h5>
+          <form className="forms">
+            <div class="mb-3 row">
+              <label for="nombre" class="col-sm-4 col-form-label fw-bold">NOMBRE:</label>
+              <div class="col-sm-8">
+                <input type="text" readonly class="form-control-plaintext" id="nombre" value="Deivid Ruales"></input>
+              </div>
+              <label for="contrasena" class="col-sm-4 col-form-label fw-bold">CONTRASEÑA:</label>
+              <div class="col-sm-8">
+                <input type="text" readonly class="form-control-plaintext" id="contrasena" value="********"></input>
+              </div>
+              <label for="cedula" class="col-sm-4 col-form-label fw-bold">CÉDULA:</label>
+              <div class="col-sm-8">
+                <input type="text" readonly class="form-control-plaintext" id="cedula" value="1000123532"></input>
+              </div>
+              <label for="telefono" class="col-sm-4 col-form-label fw-bold">TELÉFONO:</label>
+              <div class="col-sm-8">
+                <input type="text" readonly class="form-control-plaintext" id="telefono" value="3153895621"></input>
+              </div>
+              <label for="direccion" class="col-sm-4 col-form-label fw-bold">DIRECCIÓN:</label>
+              <div class="col-sm-8">
+                <input type="text" readonly class="form-control-plaintext" id="direccion" value="Carrera 25 No. 15 - 32 Centro"></input>
+              </div>
+              <label for="cargo" class="col-sm-4 col-form-label fw-bold">CARGO:</label>
+              <div class="col-sm-8">
+                <input type="text" readonly class="form-control-plaintext" id="cargo" value="Técnico"></input>
+              </div>
             </div>
-            <a className="register-button" href="userEditProfile.html">Modificar datos</a>
+            <a href="ProfileUpdate">
+              <button type="button" class="btn btn-primary mb-3">Modificar Datos</button>
+            </a>
           </form>
         </div>
       </div>

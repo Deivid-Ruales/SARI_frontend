@@ -1,29 +1,30 @@
 import React from 'react';
-import '../../Styles/ClientNew.css';
 
 const ClientUpdate = () => {
   return (
-    <main className="bg-main bg-new-client">
-      {/* Contenedor principal del formulario de actualización */}
-      <div className="form-div-bg">
-        <div className="form-div">
-          
-          {/* Título de la sección */}
-          <div className="title">
-            <h1 className="text-title">ACTUALIZAR CLIENTE</h1>
-          </div>
-
-          {/* Formulario para actualizar la información del cliente */}
-          <form className="form">
-            <input className="input-form" type="text" placeholder="Deivid Ruales" />
-            <p className="label-input">Nombre</p>
-            <input className="input-form" type="text" placeholder="1085000111" />
-            <p className="label-input">Cédula</p>
-            <input className="input-form" type="text" placeholder="315389000" />
-            <p className="label-input">Teléfono</p>
-            <input className="input-form" type="text" placeholder="Carrera 25 No. 20 - 22 Centro" />
-            <p className="label-input">Dirección</p>
-            <button className="register-button">Actualizar</button>
+    <main className="d-flex justify-content-center">
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">ACTUALIZAR CLIENTE</h5>
+          <form className="forms">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="name" placeholder='Deivid Ruales'></input>
+            </div>
+            <div class="mb-3">
+              <label for="cedula" class="form-label">Cédula</label>
+              <input type="text" class="form-control" id="cedula" placeholder='1085000111' ></input>
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="text" class="form-control" id="telefono" placeholder='3153890000'></input>
+            </div>
+            <div class="mb-3">
+              <label for="direccion" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="direccion" placeholder='Carrera 25 No. 20 - 22 Centro'></input>
+            </div>
+            <button type="submit" class="btn btn-primary button-form">Actualizar</button>
+            <button type="reset" class="btn btn-secondary button-form">Cancelar</button>
           </form>
         </div>
       </div>

@@ -7,10 +7,7 @@ import user from '../Resources/user.png';
 
 const Menu = () => {
   return (
-    <div>
-      {/* Sección principal con los diferentes botones del menú */}
-      <main className="bg-main bg-main-page">
-
+      <main className="bg-main bg-main-page ">
         {/* Cada uno de estos divs representa un botón del menú con una imagen y un título */}
         <div className="item-menu">
           <a href="ClientList">
@@ -54,7 +51,6 @@ const Menu = () => {
           </a>
         </div>
       </main>
-    </div>
   );
 };
 

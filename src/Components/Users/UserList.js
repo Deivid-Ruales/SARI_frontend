@@ -1,58 +1,44 @@
 import React from 'react';
-import '../../Styles/ClientList.css';
+import trash from '../../Resources/trash.png';
+import config from '../../Resources/config.png';
 
 const UserList = () => {
   return (
-    <div>
-       {/* Sección principal donde se muestra la tabla de usuarios */}
-      <main className="bg-main bg-client">
-
-        {/* Contenedor del formulario */}
-        <div className="form-div-bg">
-          <div className="form-div">
-            
-            {/* Título de la tabla */}
-            <div className="title">
-              <h1 className="text-title">USUARIOS</h1>
-            </div>
-            
-            {/* Tabla que muestra la lista de usuarios */}
-            <table className="device-table">
-              <thead>
-                <tr className="table-head">
-                  <th>No.</th>
-                  <th>Nombre</th>
-                  <th>Cédula</th>
-                  <th>Teléfono</th>
-                  <th>Dirección</th>
-                  <th>Cargo</th>
-                  <th className="column-image">Editar</th>
-                  <th className="column-image">Eliminar</th>
+    <main className="d-flex justify-content-center">
+      <div className="card">
+        <div className="card-body"> 
+          <h5 className="card-title">USUARIOS</h5>
+          <div className="table-responsive">
+            <table className="table table-borderless">
+              <thead className="table-head table-primary">
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Cédula</th>
+                  <th scope="col">Teléfono</th>
+                  <th scope="col">Dirección</th>
+                  <th scope="col">Cargo</th>
+                  <th scope="col" className="column-image">Editar</th>
+                  <th scope="col" className="column-image">Eliminar</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="table-group-divider table-striped">
                 <tr>
-                  <td>1</td>
-                  <td>Deivid Ruales</td>
+                  <td scope="row">1</td>
+                  <td >Deivid Ruales</td>
                   <td>1085000111</td>
                   <td>3153890000</td>
                   <td>Carrera 25 No. 20 - 22 Centro</td>
                   <td>Técnico</td>
-                  {/* Enlace para editar el perfil del usuario */}
-                  <td><a href="userEditProfile.html"><img className="image-table" src="/resources/config.png" alt="Editar" /></a></td>
-                  {/* Enlace para eliminar al usuario */}
-                  <td><a href="#"><img className="image-table" src="/resources/trash.png" alt="Eliminar" /></a></td>
+                  <td><a href="ProfileUpdate"><img className="image-table" src={config} alt="Editar" /></a></td>
+                  <td><a href="#"><img className="image-table" src={trash} alt="Eliminar" /></a></td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-        
-      </main>
-
-      {/* Archivo JavaScript que gestiona la accesibilidad */}
-      <script src="js/accessibility.js"></script>
-    </div>
+      </div>
+    </main>
   );
 };
 

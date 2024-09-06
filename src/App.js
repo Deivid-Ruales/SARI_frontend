@@ -13,7 +13,7 @@ import ServiceNew from './Components/Services/ServiceNew';
 import ServiceUpdate from './Components/Services/ServiceUpdate';
 import Profile from './Components/Users/Profile';
 import ProfileHistory from './Components/Users/ProfileHistory';
-import ProfielUpdate from './Components/Users/ProfileUpdate';
+import ProfileUpdate from './Components/Users/ProfileUpdate';
 import UserList from './Components/Users/UserList';
 import Menu from './Components/Menu';
 import Header from './Components/Header';
@@ -37,7 +37,7 @@ function App() {
         <Route path="/ServiceUpdate" element={<ServiceUpdate />}/>
         <Route path="/Profile" element={<Profile />}/>
         <Route path="/ProfileHistory" element={<ProfileHistory />}/>
-        <Route path="/ProfielUpdate" element={<ProfielUpdate />}/>
+        <Route path="/ProfileUpdate" element={<ProfileUpdate />}/>
         <Route path="/UserList" element={<UserList />}/>
         <Route path="/Menu" element={<Menu />}/>
       </Routes>

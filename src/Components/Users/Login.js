@@ -1,31 +1,29 @@
-import React from 'react'; 
-import "../../Styles/Index.css"
+import React from 'react';
 
-const Login = () => { 
+const Login = () => {
   return (
-    // Aquí empieza el contenido que se va a mostrar en la pantalla.
-    <div className="form-div-bg">
-      <div className="form-div">
-        <div className="title">
-          <h1 className="text-title">INGRESAR AL SISTEMA</h1>
+    <main className="d-flex justify-content-center">
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">INGRESAR AL SISTEMA</h5>
+          <form className="forms">
+            <div class="mb-3">
+              <label for="cedula" class="form-label">Cédula</label>
+              <input type="text" class="form-control" id="cedula" ></input>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="password"></input>
+            </div>
+            <button type="submit" class="btn btn-primary button-form">Entrar</button>
+            <button type="reset" class="btn btn-secondary button-form">Cancelar</button>
+            <div className="div-rec-contra">
+              <a href="#" className="recupera-contrasena">Olvidé mi contraseña</a>
+            </div>
+          </form>
         </div>
-
-        {/* Sección que contiene el formulario de inicio de sesión */}
-        <form className="form">
-          <input className="input-form" type="text" />
-          <p className="label-input">Cédula</p>
-          
-          <input className="input-form" type="password" />
-          <p className="label-input">Contraseña</p>
-
-          {/* Enlace que lleva al usuario al menú después de iniciar sesión */}
-          <a href="menu.html" className="login-button">Ingresar</a>
-
-          {/* Enlace para recuperar la contraseña si el usuario la ha olvidado */}
-          <a className="forgot-pass-link" href="#" target="_blank">Olvidé mi contraseña</a>
-        </form>
       </div>
-    </div>
+    </main>
   );
 };
 
