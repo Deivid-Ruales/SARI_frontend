@@ -6,7 +6,7 @@ import watch from '../../Resources/watch.png';
 const ClientInfo = () => {
   return (
     <main className="d-flex justify-content-center">
-      <div className="card" style={{ width: '800px' }}>
+      <div className="card shadow p-3 mb-5" style={{ width: '800px' }}>
         <div className="card-body">
           <h5 className="card-title">INFORMACIÓN DEL CLIENTE</h5>
 

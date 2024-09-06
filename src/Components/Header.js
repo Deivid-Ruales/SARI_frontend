@@ -1,20 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../Resources/logo-cgimport.png';
 import zoomPlus from '../Resources/zoom-mas.png';
 import zoomMinus from '../Resources/zoom-menos.png';
 
-
 function Header() {
+  const [fontSize, setFontSize] = useState(parseFloat(getComputedStyle(document.body).fontSize));
+
+  // Efecto para actualizar el tamaño de la fuente del body cuando cambia el estado
+  useEffect(() => {
+    document.body.style.fontSize = `${fontSize}px`;
+  }, [fontSize]);
+
+  const handleZoomPlus = () => {
+    if (fontSize < 18 && fontSize > 7) {
+      setFontSize(prevSize => prevSize * 1.1);
+    }
+  };
+
+  const handleZoomLess = () => {
+    if (fontSize < 20 && fontSize > 9) {
+      setFontSize(prevSize => prevSize / 1.1);
+    }
+  };
+
   return (
     <header>
       <div className="accessibility">
-        <a id="zoom-plus" href="#"><img className="icon-access" src={zoomPlus} alt="Zoom Más" /></a>
-        <a id="zoom-less" href="#"><img className="icon-access" src={zoomMinus} alt="Zoom Menos" /></a>
+        <button id="zoom-plus" onClick={handleZoomPlus}>
+          <img className="icon-access" src={zoomPlus} alt="Zoom Más" />
+        </button>
+        <button id="zoom-less" onClick={handleZoomLess}>
+          <img className="icon-access" src={zoomMinus} alt="Zoom Menos" />
+        </button>
       </div>
       <nav className="navbar navbar-expand-lg" data-bs-theme="dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"><img className="logo-header" alt="Logo CGImport" src={logo}/></a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <a className="navbar-brand" href="#">
+            <img className="logo-header" alt="Logo CGImport" src={logo} />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">

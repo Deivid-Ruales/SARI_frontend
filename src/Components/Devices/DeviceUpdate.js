@@ -3,7 +3,7 @@ import React from 'react';
 const DeviceUpdate = () => {
   return (
     <main className="d-flex justify-content-center">
-      <div className="card">
+      <div className="card shadow p-3 mb-5">
         <div className="card-body">
           <h5 className="card-title">ACTUALIZAR DISPOSITIVO</h5>
           <form className="forms">

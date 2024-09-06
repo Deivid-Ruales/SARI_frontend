@@ -4,7 +4,7 @@ import config from '../../Resources/config.png';
 const DeviceHistory = () => {
   return (
     <main className="d-flex justify-content-center">
-      <div className="card" style={{ width: '800px' }}>
+      <div className="card shadow p-3 mb-5" style={{ width: '800px' }}>
         <div className="card-body">
           <h5 className="card-title">INFORMACIÓN DEL DISPOSITIVO</h5>
 

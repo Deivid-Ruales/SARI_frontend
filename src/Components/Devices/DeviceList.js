@@ -6,7 +6,7 @@ import watch from '../../Resources/watch.png';
 const DeviceList = () => {
   return (
     <main className="d-flex justify-content-center">
-      <div className="card">
+      <div className="card shadow p-3 mb-5">
         <div className="card-body">
           <h5 className="card-title">DISPOSITIVOS</h5>
           <div className="table-responsive">

@@ -3,7 +3,7 @@ import React from 'react';
 const ProfileUpdate = () => {
   return (
     <main className="d-flex justify-content-center">
-      <div className="card" style={{ width: '400px' }}>
+      <div className="card shadow p-3 mb-5" style={{ width: '400px' }}>
         <div className="card-body">
           <h5 className="card-title">ACTUALIZAR DATOS DE USUARIO</h5>
           <form className="forms">

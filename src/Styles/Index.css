@@ -26,8 +26,8 @@ body {
 }
 
 .card {
-  border-left: 7px rgb(197, 190, 190) solid;
-  border-bottom: 7px rgb(197,190,190) solid;
+  border-left: 7px rgb(212, 210, 210) solid;
+  border-bottom: 7px rgb(212, 210, 210) solid;
   min-height: 100vh;
   max-width: 1000px;
 }
@@ -61,6 +61,13 @@ td, th {
   right:2px;
   top: 50px;
   Z-INDEX: 1;
+}
+
+.accessibility button {
+  background-color: transparent;
+  border: none; 
+  padding: 0; 
+  cursor: pointer;
 }
 
 .icon-access {
