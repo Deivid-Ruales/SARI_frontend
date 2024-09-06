@@ -8,24 +8,35 @@ const DeviceHistory = () => {
         <div className="card-body">
           <h5 className="card-title">INFORMACIÓN DEL DISPOSITIVO</h5>
 
+          {/* Formulario para mostrar la información del dispositivo */}
           <form className="forms">
             <div class="mb-3 row">
+              
+              {/* Campo para el tipo de dispositivo */}
               <label for="tipo" class="col-sm-2 col-form-label fw-bold">TIPO:</label>
               <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="tipo" value="Impresora"></input>
               </div>
+
+              {/* Campo para la marca del dispositivo */}
               <label for="marca" class="col-sm-2 col-form-label fw-bold">MARCA:</label>
               <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="marca" value="Epson"></input>
               </div>
+
+              {/* Campo para la referencia del dispositivo */}
               <label for="referencia" class="col-sm-2 col-form-label fw-bold">REFERENCIA:</label>
               <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="referencia" value="L210"></input>
               </div>
+
+              {/* Campo para el número de serie */}
               <label for="serial" class="col-sm-2 col-form-label fw-bold">SERIAL:</label>
               <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="serial" value="VNHK0255TD3"></input>
               </div>
+
+              {/* Campo para mostrar el nombre del propietario */}
               <label for="propietario" class="col-sm-2 col-form-label fw-bold">PROPIETARIO:</label>
               <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="propietario" value="Deivid Ruales"></input>
@@ -33,12 +44,14 @@ const DeviceHistory = () => {
             </div>
           </form>
 
+          {/* Botón para ingresar un nuevo servicio */}
           <div class="d-flex justify-content-end">
             <a href="ServiceNew">
               <button type="button" class="btn btn-primary mb-3">Ingresar un Servicio</button>
             </a>
           </div>
 
+          {/* Tabla para mostrar el historial de servicios del dispositivo */}
           <div className="table-responsive">
             <table className="table table-borderless">
               <thead className="table-head table-primary">
@@ -64,6 +77,8 @@ const DeviceHistory = () => {
                   <td>2.533</td>
                   <td>33.265</td>
                   <td>Deivid Ruales</td>
+
+                  {/* Imagen con enlace para editar un servicio */}
                   <td><a href="ServiceUpdate"><img className="image-table" src={config} alt="Editar" /></a></td>
                 </tr>
               </tbody>

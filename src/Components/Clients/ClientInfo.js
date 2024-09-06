@@ -10,20 +10,25 @@ const ClientInfo = () => {
         <div className="card-body">
           <h5 className="card-title">INFORMACIÓN DEL CLIENTE</h5>
 
+          {/* Formulario para mostrar la información del cliente (sólo lectura) */}
           <form className="forms">
             <div class="mb-3 row">
+              {/* Campo de nombre */}
               <label for="nombre" class="col-sm-2 col-form-label fw-bold">NOMBRE:</label>
               <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="nombre" value="Deivid Ruales"></input>
               </div>
+              {/* Campo de cédula */}
               <label for="cedula" class="col-sm-2 col-form-label fw-bold">CÉDULA:</label>
               <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="cedula" value="1000123532"></input>
               </div>
+              {/* Campo de teléfono */}
               <label for="telefono" class="col-sm-2 col-form-label fw-bold">TELÉFONO:</label>
               <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="telefono" value="3153895621"></input>
               </div>
+              {/* Campo de dirección */}
               <label for="direccion" class="col-sm-2 col-form-label fw-bold">DIRECCIÓN:</label>
               <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="direccion" value="Carrera 25 No. 15 - 32 Centro"></input>
@@ -31,12 +36,14 @@ const ClientInfo = () => {
             </div>
           </form>
 
+          {/* Botón para registrar un nuevo dispositivo */}
           <div class="d-flex justify-content-end">
             <a href="DeviceNew">
               <button type="button" class="btn btn-primary mb-3">Registrar Nuevo Dispositivo</button>
             </a>
           </div>
 
+          {/* Tabla de dispositivos del cliente */}
           <div className="table-responsive">
             <table className="table table-borderless">
               <thead className="table-head table-primary">
@@ -54,12 +61,14 @@ const ClientInfo = () => {
               </thead>
               <tbody class="table-group-divider table-striped">
                 <tr>
+                  {/* Información del primer dispositivo */}
                   <td>1</td>
                   <td>Impresora</td>
                   <td>Epson</td>
                   <td>L210</td>
                   <td>VNHK0255TD3</td>
                   <td>Multifuncional</td>
+                  {/* Iconos con enlaces para historial, editar y eliminar */}
                   <td><a href="DeviceHistory"><img className="image-table" src={watch} alt="Historial" /></a></td>
                   <td><a href="DeviceUpdate"><img className="image-table" src={config} alt="Editar" /></a></td>
                   <td><a href="#"><img className="image-table" src={trash} alt="Eliminar" /></a></td>

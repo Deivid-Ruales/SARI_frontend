@@ -9,6 +9,8 @@ const ClientList = () => {
       <div className="card shadow p-3 mb-5">
         <div className="card-body"> 
           <h5 className="card-title">CLIENTES</h5>
+
+          {/* Tabla para mostrar la lista de clientes */}
           <div className="table-responsive">
             <table className="table table-borderless">
               <thead className="table-head table-primary">
@@ -25,13 +27,17 @@ const ClientList = () => {
               </thead>
               <tbody class="table-group-divider table-striped">
                 <tr>
+                  {/* Información del primer cliente */}
                   <td scope="row">1</td>
-                  <td >Deivid Ruales</td>
+                  <td>Deivid Ruales</td>
                   <td>1085000111</td>
                   <td>3153890000</td>
                   <td>Carrera 25 No. 20 - 22 Centro</td>
+                  {/* Enlace para ver dispositivos asociados al cliente */}
                   <td><a href="ClientInfo"><img className="image-table" src={watch} alt="Ver dispositivos" /></a></td>
+                  {/* Enlace para editar información del cliente */}
                   <td><a href="ClientUpdate"><img className="image-table" src={config} alt="Editar" /></a></td>
+                  {/* Enlace para eliminar al cliente */}
                   <td><a href="#"><img className="image-table" src={trash} alt="Eliminar" /></a></td>
                 </tr>
               </tbody>
