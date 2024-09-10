@@ -24,22 +24,22 @@ function App() {
     <Router>
       <Header/>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/ClientList" element={<ClientList />}/>
-        <Route path="/ClientInfo" element={<ClientInfo />}/>
-        <Route path="/ClientNew" element={<ClientNew />}/>
-        <Route path="/ClientUpdate" element={<ClientUpdate />}/>
-        <Route path="/DeviceHistory" element={<DeviceHistory />}/>
-        <Route path="/DeviceList" element={<DeviceList />}/>
-        <Route path="/DeviceNew" element={<DeviceNew />}/>
-        <Route path="/DeviceUpdate" element={<DeviceUpdate />}/>
-        <Route path="/ServiceNew" element={<ServiceNew />}/>
-        <Route path="/ServiceUpdate" element={<ServiceUpdate />}/>
-        <Route path="/Profile" element={<Profile />}/>
-        <Route path="/ProfileHistory" element={<ProfileHistory />}/>
-        <Route path="/ProfileUpdate" element={<ProfileUpdate />}/>
-        <Route path="/UserList" element={<UserList />}/>
-        <Route path="/Menu" element={<Menu />}/>
+        <Route exact path="/" element={<Login />} />
+        <Route exact path="/ClientList" element={<ClientList />}/>
+        <Route exact path="/ClientInfo/:id" element={<ClientInfo />}/>
+        <Route exact path="/ClientNew" element={<ClientNew />}/>
+        <Route exact path="/ClientUpdate/:id" element={<ClientUpdate />}/>
+        <Route exact path="/DeviceHistory/:id" element={<DeviceHistory />}/>
+        <Route exact path="/DeviceList" element={<DeviceList />}/>
+        <Route exact path="/DeviceNew" element={<DeviceNew />}/>
+        <Route exact path="/DeviceUpdate/:id" element={<DeviceUpdate />}/>
+        <Route exact path="/ServiceNew" element={<ServiceNew />}/>
+        <Route exact path="/ServiceUpdate/:id" element={<ServiceUpdate />}/>
+        <Route exact path="/Profile/:id" element={<Profile />}/>
+        <Route exact path="/ProfileHistory/:id" element={<ProfileHistory />}/>
+        <Route exact path="/ProfileUpdate/:id" element={<ProfileUpdate />}/>
+        <Route exact path="/UserList" element={<UserList />}/>
+        <Route exact path="/Menu" element={<Menu />}/>
       </Routes>
       <Footer/>
     </Router>

@@ -17,6 +17,13 @@ body {
   background-color: #ededed;
 }
 
+button {
+  background-color: transparent;
+  border: none; 
+  padding: 0; 
+  cursor: pointer;
+}
+
 /******************** CARDS *********************/
 
 .card-title {
@@ -61,13 +68,6 @@ td, th {
   right:2px;
   top: 50px;
   Z-INDEX: 1;
-}
-
-.accessibility button {
-  background-color: transparent;
-  border: none; 
-  padding: 0; 
-  cursor: pointer;
 }
 
 .icon-access {
