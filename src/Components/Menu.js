@@ -2,6 +2,8 @@ import React from 'react';
 import '../Styles/Menu.css';
 import customer from '../Resources/customer.png';
 import printer from '../Resources/printer.png';
+import customerNew from '../Resources/customerNew.png';
+import printerNew from '../Resources/printerNew.png';
 import historial from '../Resources/historial.png';
 import user from '../Resources/user.png';
 
@@ -36,7 +38,7 @@ const Menu = () => {
         <div className="item-menu">
           {/* Enlace para registrar un nuevo cliente */}
           <a href="ClientNew">
-            <img className="image-menu" src={customer} alt="Registrar cliente" />
+            <img className="image-menu" src={customerNew} alt="Registrar cliente" />
             <p className="title-menu">REGISTRAR CLIENTE</p>
           </a>
         </div>
@@ -44,7 +46,7 @@ const Menu = () => {
         <div className="item-menu">
           {/* Enlace para registrar un nuevo dispositivo */}
           <a href="DeviceNew">
-            <img className="image-menu" src={printer} alt="Registrar dispositivo" />
+            <img className="image-menu" src={printerNew} alt="Registrar dispositivo" />
             <p className="title-menu">REGISTRAR DISPOSITIVO</p>
           </a>
         </div>

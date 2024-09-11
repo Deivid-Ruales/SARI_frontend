@@ -5,6 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import trash from '../../Resources/trash.png';
 import config from '../../Resources/config.png';
 import watch from '../../Resources/watch.png';
+import plus from '../../Resources/plus.png';
 
 const ClientList = () => {
   const urlBase = "http://localhost:8080/sari/usuarios";
@@ -49,6 +50,14 @@ const ClientList = () => {
         <div className="card shadow p-3 mb-5">
           <div className="card-body">
             <h5 className="card-title">CLIENTES</h5>
+
+            {/* Botón para registrar un nuevo cliente */}
+            <div className="d-flex justify-content-end">
+              <Link to={`/ClientNew`}>
+                <button type="button" className="btn btn-primary mb-3">Nuevo cliente
+                </button>
+              </Link>
+            </div>
 
             <div className="table-responsive">
               <table className="table table-borderless">
