@@ -68,6 +68,7 @@ const ClientList = () => {
                     <th scope="col">Cédula</th>
                     <th scope="col">Teléfono</th>
                     <th scope="col">Dirección</th>
+                    <th scope="col">Correo</th>
                     <th scope="col" className="column-image">Dispositivos</th>
                     <th scope="col" className="column-image">Editar</th>
                     <th scope="col" className="column-image">Eliminar</th>
@@ -82,6 +83,7 @@ const ClientList = () => {
                         <td>{cliente.cedula}</td>
                         <td>{cliente.telefono}</td>
                         <td>{cliente.direccion}</td>
+                        <td>{cliente.email}</td>
                         <td>
                           <Link to={`/ClientInfo/${cliente.id_usuario}`} className="btn btn-link">
                             <img className="image-table" src={watch} alt="Ver dispositivos" />
@@ -101,7 +103,7 @@ const ClientList = () => {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan="8" className="text-center">No hay clientes disponibles</td>
+                      <td colSpan="9" className="text-center">No hay clientes disponibles</td>
                     </tr>
                   )}
                 </tbody>

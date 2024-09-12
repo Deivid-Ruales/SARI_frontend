@@ -3,25 +3,26 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Modal, Button } from 'react-bootstrap';
 
-const ClientNew = () => {
+const UserNew = () => {
   const navegacion = useNavigate();
-  const [cliente, setCliente] = useState({
+  const [empleado, setEmpleado] = useState({
     nombre: "",
     cedula: "",
     telefono: "",
     email: "",
     contrasena: "",
     direccion: "",
-    rol: "Cliente"
+    rol: "Empleado"
   });
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const [mostrarPassword, setMostrarPassword] = useState(false);
 
-  const { nombre, cedula, telefono, direccion, email} = cliente;
+  const { nombre, cedula, telefono, direccion, email, contrasena} = empleado;
 
   const onInputChange = (e) => {
     const { name, value } = e.target;
-    setCliente({ ...cliente, [name]: value });
+    setEmpleado({ ...empleado, [name]: value });
   };
 
   const onSubmit = async (e) => {
@@ -33,7 +34,7 @@ const ClientNew = () => {
   const handleConfirm = async () => {
     const urlBase = "http://localhost:8080/sari/usuarios";
     try {
-      await axios.post(urlBase, cliente);
+      await axios.post(urlBase, empleado);
       setShowModal(false);
       navegacion(-1);
     } catch (error) {
@@ -45,17 +46,21 @@ const ClientNew = () => {
     setShowModal(false);
   };
 
+  const visibilidadPassword = () => {
+    setMostrarPassword(!mostrarPassword);
+  };
+
   return (
     <>
       <main className="d-flex justify-content-center">
         <div className="card shadow p-3 mb-5">
           <div className="card-body">
-            <h5 className="card-title">REGISTRAR NUEVO CLIENTE</h5>
+            <h5 className="card-title">REGISTRAR NUEVO EMPLEADO</h5>
 
-            {/* Formulario para registrar un nuevo cliente */}
+            {/* Formulario para registrar un nuevo empleado */}
             <form className="forms" onSubmit={onSubmit}>
 
-              {/* Campo para ingresar el nombre del cliente */}
+              {/* Campo para ingresar el nombre del empleado */}
               <div className="mb-3">
                 <label htmlFor="nombre" className="form-label">Nombre</label>
                 <input
@@ -69,7 +74,7 @@ const ClientNew = () => {
                 />
               </div>
 
-              {/* Campo para ingresar la cédula del cliente */}
+              {/* Campo para ingresar la cédula del empleado */}
               <div className="mb-3">
                 <label htmlFor="cedula" className="form-label">Cédula</label>
                 <input
@@ -83,7 +88,7 @@ const ClientNew = () => {
                 />
               </div>
 
-              {/* Campo para ingresar el teléfono del cliente */}
+              {/* Campo para ingresar el teléfono del empleado */}
               <div className="mb-3">
                 <label htmlFor="telefono" className="form-label">Teléfono</label>
                 <input
@@ -97,7 +102,7 @@ const ClientNew = () => {
                 />
               </div>
 
-              {/* Campo para ingresar la dirección del cliente */}
+              {/* Campo para ingresar la dirección del empleado */}
               <div className="mb-3">
                 <label htmlFor="direccion" className="form-label">Dirección</label>
                 <input
@@ -110,7 +115,7 @@ const ClientNew = () => {
                 />
               </div>
 
-              {/* Campo para ingresar el email del cliente */}
+              {/* Campo para ingresar el email del empleado */}
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">Email</label>
                 <input
@@ -122,6 +127,28 @@ const ClientNew = () => {
                   onChange={onInputChange}
                 />
               </div>
+
+              {/* Campo para ingresar y mostrar/ocultar la contraseña del empleado */}
+              <label htmlFor="contrasena" className="col-sm-4 col-form-label">Contraseña:</label>
+                <div className="mb-3">
+                  <div className="input-group">
+                    <input
+                      type={mostrarPassword ? "text" : "password"}
+                      className="form-control"
+                      id="contrasena"
+                      name='contrasena'
+                      value={contrasena}
+                      onChange={onInputChange}
+                    />
+                    <button
+                      type="button"
+                      className="btn btn-outline-secondary"
+                      onClick={visibilidadPassword}
+                    >
+                      {mostrarPassword ? "Ocultar" : "Mostrar"}
+                    </button>
+                  </div>
+                </div>
 
               {/* Botón para registrar el cliente */}
               <button type="submit" className="btn btn-primary button-form">Registrar</button>
@@ -152,4 +179,4 @@ const ClientNew = () => {
   );
 };
 
-export default ClientNew;
+export default UserNew;
