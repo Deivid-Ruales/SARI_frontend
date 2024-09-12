@@ -1,65 +1,144 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
+import { Modal, Button } from 'react-bootstrap';
 
 const ServiceUpdate = () => {
+  const navigate = useNavigate();
+  const { id } = useParams(); 
+  const [service, setService] = useState({
+    observaciones: "",
+    almohadillas: "",
+    paginas_adf: "",
+    paginas_impresas: ""
+  });
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+
+  const { observaciones, almohadillas, paginas_adf, paginas_impresas } = service;
+
+  // Cargar la información del servicio desde la API
+  useEffect(() => {
+    cargarServicio();
+  }, []);
+
+  const cargarServicio = async () => {
+    try {
+      const urlBase = `http://localhost:8080/sari/historiales/${id}`;
+      const resultado = await axios.get(urlBase);
+      setService(resultado.data);
+    } catch (error) {
+      console.error("Error al cargar el servicio:", error);
+    }
+  };
+
+  // Manejar cambios en los campos del formulario
+  const onInputChange = (e) => {
+    const { name, value } = e.target;
+    setService({ ...service, [name]: value });
+  };
+
+  // Enviar el formulario actualizado
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setShowModal(true); // Mostrar el modal de confirmación
+    setModalMessage(`¿Estás seguro que deseas actualizar este servicio?`);
+  };
+
+  // Confirmar la actualización
+  const handleConfirm = async () => {
+    const urlBase = `http://localhost:8080/sari/historiales/${id}`;
+    try {
+      await axios.put(urlBase, service);
+      setShowModal(false);
+      navigate(-1); // Volver a la página anterior
+    } catch (error) {
+      console.error("Error al actualizar el servicio:", error);
+    }
+  };
+
+  // Cancelar la acción del modal
+  const handleCancel = () => {
+    setShowModal(false);
+  };
+
   return (
-    <main className="d-flex justify-content-center">
-      <div className="card shadow p-3 mb-5">
-        <div className="card-body">
-          {/* Título del formulario para actualizar un servicio existente */}
-          <h5 className="card-title">ACTUALIZAR SERVICIO</h5>
+    <>
+      <main className="d-flex justify-content-center">
+        <div className="card shadow p-3 mb-5">
+          <div className="card-body">
+            <h5 className="card-title">ACTUALIZAR SERVICIO</h5>
 
-          {/* Formulario para modificar los detalles de un servicio existente */}
-          <form className="forms">
-            
-            {/* Campo para actualizar la fecha del servicio */}
-            <div class="mb-3">
-              <label for="fecha" class="form-label">Fecha</label>
-              <input type="date" class="form-control" id="fecha" placeholder="15/Feb/24"></input>
-            </div>
+            {/* Formulario para actualizar los detalles del servicio */}
+            <form className="forms" onSubmit={onSubmit}>
+              <div className="mb-3">
+                <label htmlFor="observaciones" className="form-label">Observaciones</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="observaciones"
+                  name="observaciones"
+                  value={observaciones}
+                  onChange={onInputChange}
+                  required
+                />
+              </div>
 
-            {/* Campo para actualizar el tipo de servicio realizado */}
-            <div class="mb-3">
-              <label for="servicio" class="form-label">Servicio</label>
-              <input type="text" class="form-control" id="servicio" placeholder="Mantenimiento"></input>
-            </div>
+              <div className="mb-3">
+                <label htmlFor="almohadillas" className="form-label">% Almohadillas</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="almohadillas"
+                  name="almohadillas"
+                  value={almohadillas}
+                  onChange={onInputChange}
+                />
+              </div>
 
-            {/* Campo para modificar las observaciones del servicio */}
-            <div class="mb-3">
-              <label for="observaciones" class="form-label">Observaciones</label>
-              <input type="text" class="form-control" id="observaciones" placeholder="Limpieza de inyectores, purga de sistema"></input>
-            </div>
+              <div className="mb-3">
+                <label htmlFor="paginas_adf" className="form-label">Contador ADF</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="paginas_adf"
+                  name="paginas_adf"
+                  value={paginas_adf}
+                  onChange={onInputChange}
+                />
+              </div>
 
-            {/* Campo para actualizar el valor de las almohadillas */}
-            <div class="mb-3">
-              <label for="almohadillas" class="form-label">Almohadillas</label>
-              <input type="text" class="form-control" id="almohadillas" placeholder="22,15"></input>
-            </div>
+              <div className="mb-3">
+                <label htmlFor="paginas_impresas" className="form-label">Contador Impresiones</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="paginas_impresas"
+                  name="paginas_impresas"
+                  value={paginas_impresas}
+                  onChange={onInputChange}
+                />
+              </div>
 
-            {/* Campo para actualizar la cantidad de ADF del dispositivo */}
-            <div class="mb-3">
-              <label for="cantAdf" class="form-label">Cant.ADF</label>
-              <input type="text" class="form-control" id="cantAdf" placeholder="2.533"></input>
-            </div>
-
-            {/* Campo para actualizar la cantidad de impresiones del dispositivo */}
-            <div class="mb-3">
-              <label for="cantImpresiones" class="form-label">Cant.Impresiones</label>
-              <input type="text" class="form-control" id="cantImpresiones" placeholder="33.265"></input>
-            </div>
-
-            {/* Campo para actualizar el nombre del técnico que realizó el servicio */}
-            <div class="mb-3">
-              <label for="tecnico" class="form-label">Técnico</label>
-              <input type="text" class="form-control" id="tecnico" placeholder="Deivid Ruales"></input>
-            </div>
-
-            {/* Botones de acción: actualizar o cancelar */}
-            <button type="submit" class="btn btn-primary button-form">Registrar</button>
-            <button type="reset" class="btn btn-secondary button-form">Cancelar</button>
-          </form>
+              <button type="submit" className="btn btn-primary button-form">Actualizar</button>
+              <button type="reset" className="btn btn-secondary button-form" onClick={() => navigate(-1)}>Cancelar</button>
+            </form>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+
+      {/* Modal de confirmación */}
+      <Modal show={showModal} onHide={handleCancel}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirmar Actualización</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{modalMessage}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCancel}>Cancelar</Button>
+          <Button variant="primary" onClick={handleConfirm}>Confirmar</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 };
 

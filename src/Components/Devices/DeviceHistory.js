@@ -7,6 +7,7 @@ import trash from '../../Resources/trash.png';
 
 const DeviceHistory = () => {
   const urlDispositivos = "http://localhost:8080/sari/dispositivos";
+  const urlHistoriales = "http://localhost:8080/sari/historiales"
   const { id } = useParams();
   const [showModal, setShowModal] = useState(false);
   const [historialAEliminar, setHistorialAEliminar] = useState(null);
@@ -16,7 +17,8 @@ const DeviceHistory = () => {
     marca: "",
     referencia: "",
     serial_num: "",
-    descripcion: ""
+    descripcion: "",
+    usuario: ""
   });
 
   const [historial, setHistorial] = useState([]);
@@ -37,7 +39,7 @@ const DeviceHistory = () => {
 
   const cargarHistorial = async () => {
     try {
-      const resultado = await axios.get(`${urlDispositivos}/${id}/historial`);
+      const resultado = await axios.get(`${urlHistoriales}/dispositivo/${id}`);
       setHistorial(resultado.data);
     } catch (error) {
       console.error("Error al cargar historial:", error);
@@ -47,7 +49,7 @@ const DeviceHistory = () => {
   const eliminarHistorial = async () => {
     if (historialAEliminar) {
       try {
-        await axios.delete(`${urlDispositivos}/${id}/historial/${historialAEliminar.id}`);
+        await axios.delete(`${urlHistoriales}/${historialAEliminar.id_historial}`);
         setShowModal(false);
         cargarHistorial();
       } catch (error) {
@@ -90,15 +92,23 @@ const DeviceHistory = () => {
               <div className="col-sm-10">
                 <input type="text" readOnly className="form-control-plaintext" id="descripcion" value={dispositivo.descripcion || ''}></input>
               </div>
+              <label htmlFor="propietario" className="col-sm-2 col-form-label fw-bold">PROPIETARIO:</label>
+              <div className="col-sm-10">
+                <input type="text" readOnly className="form-control-plaintext" id="propietario" value={dispositivo.usuario.nombre || ''}></input>
+              </div>
+              <label htmlFor="telefono" className="col-sm-2 col-form-label fw-bold">TELÉFONO:</label>
+              <div className="col-sm-10">
+                <input type="text" readOnly className="form-control-plaintext" id="telefono" value={dispositivo.usuario.telefono || ''}></input>
+              </div>
             </div>
           </form>
 
           {/* Botón para registrar un nuevo dispositivo */}
           <div className="d-flex justify-content-end">
-              <Link to={`/ServiceNew`}>
-                <button type="button" className="btn btn-primary mb-3">Registrar Nuevo Servicio</button>
-              </Link>
-            </div>
+            <Link to={`/ServiceNew/${id}`}>
+              <button type="button" className="btn btn-primary mb-3">Registrar Nuevo Servicio</button>
+            </Link>
+          </div>
 
           {/* Tabla para mostrar el historial de servicios del dispositivo */}
           <div className="table-responsive">
@@ -107,11 +117,10 @@ const DeviceHistory = () => {
                 <tr>
                   <th scope="col">No.</th>
                   <th scope="col">Fecha</th>
-                  <th scope="col">Servicio</th>
                   <th scope="col">Observaciones</th>
                   <th scope="col">Almohadillas</th>
-                  <th scope="col">Cant.ADF</th>
-                  <th scope="col">Cant.Impresiones</th>
+                  <th scope="col">Páginas ADF</th>
+                  <th scope="col">Páginas impresas</th>
                   <th scope="col">Técnico</th>
                   <th scope="col" className="column-image">Editar</th>
                   <th scope="col" className="column-image">Eliminar</th>
@@ -120,16 +129,19 @@ const DeviceHistory = () => {
               <tbody className="table-group-divider table-striped">
                 {historial.length > 0 ? (
                   historial.map((servicio, index) => (
-                    <tr key={servicio.id}>
+                    <tr key={servicio.id_historial}>
                       <td>{index + 1}</td>
-                      <td>{servicio.fecha}</td>
-                      <td>{servicio.servicio}</td>
+                      <td>{servicio.turno.fecha_hora_fin}</td>
                       <td>{servicio.observaciones}</td>
                       <td>{servicio.almohadillas}</td>
-                      <td>{servicio.cant_adf}</td>
-                      <td>{servicio.cant_impresiones}</td>
-                      <td>{servicio.tecnico}</td>
-                      <td><a href="ServiceUpdate"><img className="image-table" src={config} alt="Editar" /></a></td>
+                      <td>{servicio.paginas_adf}</td>
+                      <td>{servicio.paginas_impresas}</td>
+                      <td>{servicio.turno.usuario.nombre}</td>
+                      <td>
+                        <Link to={`/ServiceUpdate/${servicio.id_historial}`}>
+                          <img className="image-table" src={config} alt="Editar" />
+                        </Link>
+                      </td>
                       <td>
                         <button onClick={() => handleEliminarClick(servicio)}>
                           <img className="image-table" src={trash} alt="Eliminar" />
@@ -139,7 +151,7 @@ const DeviceHistory = () => {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="10" className="text-center">No hay historial de servicios registrado para este dispositivo</td>
+                    <td colSpan="9" className="text-center">No hay historial de servicios registrado para este dispositivo</td>
                   </tr>
                 )}
               </tbody>
@@ -154,7 +166,7 @@ const DeviceHistory = () => {
           <Modal.Title>Confirmar Eliminación</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {historialAEliminar && `¿Estás seguro que deseas eliminar el servicio de fecha ${historialAEliminar.fecha}?`}
+          {historialAEliminar && `¿Estás seguro que deseas eliminar el servicio ${historialAEliminar.observaciones} realizado el ${historialAEliminar.turno.fecha_hora_fin}?`}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowModal(false)}>

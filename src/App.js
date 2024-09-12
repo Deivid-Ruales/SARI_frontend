@@ -33,7 +33,7 @@ function App() {
         <Route exact path="/DeviceList" element={<DeviceList />}/>
         <Route exact path="/DeviceNew" element={<DeviceNew />}/>
         <Route exact path="/DeviceUpdate/:id" element={<DeviceUpdate />}/>
-        <Route exact path="/ServiceNew" element={<ServiceNew />}/>
+        <Route exact path="/ServiceNew/:id" element={<ServiceNew />}/>
         <Route exact path="/ServiceUpdate/:id" element={<ServiceUpdate />}/>
         <Route exact path="/Profile/:id" element={<Profile />}/>
         <Route exact path="/ProfileHistory/:id" element={<ProfileHistory />}/>

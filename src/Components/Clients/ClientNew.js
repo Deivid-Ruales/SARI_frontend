@@ -11,7 +11,8 @@ const ClientNew = () => {
     telefono: "",
     email: "",
     contrasena: "",
-    direccion: ""
+    direccion: "",
+    rol: "cliente"
   });
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
