@@ -16,7 +16,7 @@ const ClientNew = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
-  const { nombre, cedula, telefono, direccion, email, contrasena } = cliente;
+  const { nombre, cedula, telefono, direccion, email} = cliente;
 
   const onInputChange = (e) => {
     const { name, value } = e.target;
@@ -25,7 +25,7 @@ const ClientNew = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setShowModal(true); // Show confirmation modal before proceeding
+    setShowModal(true);
     setModalMessage(`¿Estás seguro que deseas registrar a ${nombre}?`);
   };
 
@@ -106,7 +106,6 @@ const ClientNew = () => {
                   value={direccion}
                   name="direccion"
                   onChange={onInputChange}
-                  required
                 />
               </div>
 
@@ -120,21 +119,6 @@ const ClientNew = () => {
                   value={email}
                   name="email"
                   onChange={onInputChange}
-                  required
-                />
-              </div>
-
-              {/* Campo para ingresar la contraseña del cliente */}
-              <div className="mb-3">
-                <label htmlFor="contrasena" className="form-label">Contraseña</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="contrasena"
-                  value={contrasena}
-                  name="contrasena"
-                  onChange={onInputChange}
-                  required
                 />
               </div>
 

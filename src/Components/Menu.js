@@ -55,7 +55,7 @@ const Menu = () => {
           {/* Enlace a la lista de usuarios */}
           <a href="UserList">
             <img className="image-menu" src={user} alt="Usuarios" />
-            <p className="title-menu">USUARIOS</p>
+            <p className="title-menu">EMPLEADOS</p>
           </a>
         </div>
       </main>
