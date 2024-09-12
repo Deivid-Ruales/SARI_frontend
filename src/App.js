@@ -18,6 +18,10 @@ import UserList from './Components/Users/UserList';
 import Menu from './Components/Menu';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import UserNew from "./Components/Users/UserNew";
+import WorkShiftList from "./Components/WorkShifts/WorkShiftList";
+import WorkShiftNew from "./Components/WorkShifts/WorkShiftNew";
+import WorkShiftUpdate from "./Components/WorkShifts/WorkShiftUpdate";
 
 function App() {
   return (
@@ -39,6 +43,10 @@ function App() {
         <Route exact path="/ProfileHistory/:id" element={<ProfileHistory />}/>
         <Route exact path="/ProfileUpdate/:id" element={<ProfileUpdate />}/>
         <Route exact path="/UserList" element={<UserList />}/>
+        <Route exact path="/UserNew" element={<UserNew />}/>
+        <Route exact path="/WorkShiftList" element={<WorkShiftList />}/>
+        <Route exact path="/WorkShiftNew" element={<WorkShiftNew />}/>
+        <Route exact path="/WorkShiftUpdate/:id" element={<WorkShiftUpdate />}/>
         <Route exact path="/Menu" element={<Menu />}/>
       </Routes>
       <Footer/>

@@ -30,6 +30,7 @@ button {
   font-size: 30px;
   text-align: center;
   margin: 0 50px;
+  margin-bottom: 30px;
 }
 
 .card {
@@ -124,5 +125,10 @@ td, th {
 .recupera-contrasena {
   text-decoration:underline;
   color: blue;
+}
+
+.input-password {
+  position:relative;
+  display:block;
 }
 

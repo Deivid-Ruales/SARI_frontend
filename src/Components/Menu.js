@@ -4,7 +4,7 @@ import customer from '../Resources/customer.png';
 import printer from '../Resources/printer.png';
 import customerNew from '../Resources/customerNew.png';
 import printerNew from '../Resources/printerNew.png';
-import historial from '../Resources/historial.png';
+import turnos from '../Resources/turno.png';
 import user from '../Resources/user.png';
 
 const Menu = () => {
@@ -28,10 +28,10 @@ const Menu = () => {
         </div>
 
         <div className="item-menu">
-          {/* Enlace al historial del perfil */}
-          <a href="ProfileHistory">
-            <img className="image-menu" src={historial} alt="Mi historial" />
-            <p className="title-menu">MI HISTORIAL</p>
+          {/* Enlace a turnos de trabajo */}
+          <a href="WorkShiftList">
+            <img className="image-menu" src={turnos} alt="Turno de trabajo" />
+            <p className="title-menu">TURNOS DE TRABAJO</p>
           </a>
         </div>
 
