@@ -35,7 +35,7 @@ const DeviceList = () => {
       try {
         await axios.delete(`${urlBase}/${dispositivoAEliminar.id_dispositivo}`);
         setShowModal(false);
-        cargarDispositivos(); // Actualizar la lista después de eliminar
+        cargarDispositivos(); 
       } catch (error) {
         console.error("Error al eliminar dispositivo:", error);
       }

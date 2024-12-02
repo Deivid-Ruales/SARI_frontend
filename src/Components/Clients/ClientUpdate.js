@@ -71,90 +71,90 @@ const ClientUpdate = () => {
 
             {/* Formulario para actualizar la información del cliente */}
             <form className="forms" onSubmit={onSubmit}>
-              
+
               {/* Campo para actualizar el nombre del cliente */}
               <div className="mb-3">
                 <label htmlFor="nombre" className="form-label">Nombre</label>
-                <input 
-                  type="text" 
-                  className="form-control" 
-                  id="nombre" 
-                  name="nombre" 
-                  value={nombre} 
-                  onChange={onInputChange} 
-                  required 
+                <input
+                  type="text"
+                  className="form-control"
+                  id="nombre"
+                  name="nombre"
+                  value={nombre}
+                  onChange={onInputChange}
+                  required
                 />
               </div>
 
               {/* Campo para actualizar la cédula del cliente */}
               <div className="mb-3">
                 <label htmlFor="cedula" className="form-label">Cédula</label>
-                <input 
-                  type="text" 
-                  className="form-control" 
-                  id="cedula" 
-                  name="cedula" 
-                  value={cedula} 
-                  onChange={onInputChange} 
-                  required 
+                <input
+                  type="text"
+                  className="form-control"
+                  id="cedula"
+                  name="cedula"
+                  value={cedula}
+                  onChange={onInputChange}
+                  required
                 />
               </div>
 
               {/* Campo para actualizar el teléfono del cliente */}
               <div className="mb-3">
                 <label htmlFor="telefono" className="form-label">Teléfono</label>
-                <input 
-                  type="phone" 
-                  className="form-control" 
-                  id="telefono" 
-                  name="telefono" 
-                  value={telefono} 
-                  onChange={onInputChange} 
-                  required 
+                <input
+                  type="phone"
+                  className="form-control"
+                  id="telefono"
+                  name="telefono"
+                  value={telefono}
+                  onChange={onInputChange}
+                  required
                 />
               </div>
 
               {/* Campo para actualizar la dirección del cliente */}
               <div className="mb-3">
                 <label htmlFor="direccion" className="form-label">Dirección</label>
-                <input 
-                  type="text" 
-                  className="form-control" 
-                  id="direccion" 
-                  name="direccion" 
-                  value={direccion} 
-                  onChange={onInputChange} 
-                  required 
+                <input
+                  type="text"
+                  className="form-control"
+                  id="direccion"
+                  name="direccion"
+                  value={direccion}
+                  onChange={onInputChange}
+                  required
                 />
               </div>
 
               {/* Campo para actualizar el email del cliente */}
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">Email</label>
-                <input 
-                  type="email" 
-                  className="form-control" 
-                  id="email" 
-                  name="email" 
-                  value={email} 
-                  onChange={onInputChange} 
-                  required 
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={onInputChange}
+                  required
                 />
               </div>
 
               {/* Campo para actualizar la contraseña del cliente */}
-              <div className="mb-3">
+             {/*  <div className="mb-3">
                 <label htmlFor="contrasena" className="form-label">Contraseña</label>
-                <input 
-                  type="password" 
-                  className="form-control" 
-                  id="contrasena" 
-                  name="contrasena" 
-                  value={contrasena} 
-                  onChange={onInputChange} 
-                  required 
+                <input
+                  type="password"
+                  className="form-control"
+                  id="contrasena"
+                  name="contrasena"
+                  value={contrasena}
+                  onChange={onInputChange}
+                  required
                 />
-              </div>
+              </div> */}
 
               {/* Botón para confirmar la actualización */}
               <button type="submit" className="btn btn-primary button-form">Actualizar</button>

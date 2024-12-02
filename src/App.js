@@ -28,7 +28,7 @@ function App() {
     <Router>
       <Header/>
       <Routes>
-        <Route exact path="/" element={<Login />} />
+        <Route exact path="/" element={<Menu />} />
         <Route exact path="/ClientList" element={<ClientList />}/>
         <Route exact path="/ClientInfo/:id" element={<ClientInfo />}/>
         <Route exact path="/ClientNew" element={<ClientNew />}/>
