@@ -7,6 +7,7 @@ import config from '../../Resources/config.png';
 
 const UserList = () => {
   const urlBase = "http://localhost:8080/sari/usuarios/empleados";
+  const urlBase2 = "http://localhost:8080/sari/usuarios";
   const [usuarios, setUsuarios] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [usuarioAEliminar, setUsuarioAEliminar] = useState(null);
@@ -33,7 +34,7 @@ const UserList = () => {
   const eliminarUsuario = async () => {
     if (usuarioAEliminar) {
       try {
-        await axios.delete(`http://localhost:8080/usuarios/${usuarioAEliminar.id_usuario}`);
+        await axios.delete(`${urlBase2}/${usuarioAEliminar.id_usuario}`);
         setShowModal(false);
         cargarUsuarios();
       } catch (error) {
